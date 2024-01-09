@@ -4,6 +4,7 @@ import { Suspense } from "react"
 import { MultipleRectSkeleton } from "../ui/skeletons"
 import FavoriteMovies from "../ui/favoriteMovies"
 import FormExample from "../ui/formExample"
+import AccountAndOrgButtons from "../ui/accountBtns"
 
 export default async function Home() {
     const user = await getUserOrRedirect()
@@ -15,7 +16,10 @@ export default async function Home() {
                     <span className="font-black text-xl text-neutral-900">
                         NextJS Starter
                     </span>
-                    <LogoutButton/>
+                    <div className="w-fit h-fit flex flex-row gap-4">
+                        <AccountAndOrgButtons/>
+                        <LogoutButton/>
+                    </div>
                 </div>
                 <div className="w-full h-full flex flex-row gap-4">
                     <FormExample/>
