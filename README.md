@@ -9,10 +9,16 @@ Create a .env.local file and add the following env variables:
 - PROPELAUTH_REDIRECT_URI='http://localhost:3000/api/auth/callback'
 - SUPABASE_URL=''
 - SUPABASE_SERVICE_KEY=''
+- SVIX_WEBHOOK_NEW_ORG=''
+- SVIX_WEBHOOK_DEL_ORG=''
+- SVIX_WEBHOOK_MOD_ORG=''
+- SVIX_WEBHOOK_NEW_USER=''
+- SVIX_WEBHOOK_DEL_USER=''
+- SVIX_WEBHOOK_MOD_USER=''
 
 ## In Propelauth
 
-In the frontend integration:
+In the frontend integration section of PropelAuth dashboard:
 - Default redirect path after login: /api/auth/callback
 - Default redirect path after logout: /api/auth/logout
 
@@ -59,3 +65,25 @@ Create a new database with the following tables (for the example):
         constraint fav_movies_table_user_id_fkey foreign key (user_id) references user_table (user_id) on update cascade on delete cascade
     ) tablespace pg_default;
 
+## Add user and org
+
+While in dev mode just manually add to supabase.
+
+## When in production
+
+## In Propelauth
+
+In the frontend integration section of PropelAuth dashboard:
+- Application URL: your app url.
+
+## SVIX
+
+In PropelAuth go to webhooks, open SVIX, and create 6 webhooks for:
+- New organization
+- New user
+- Org updated
+- User updated
+- Org deleted
+- User deleted
+
+In order to use it you'll need an "Endpoint URL" to point to. In this case is the url you obtain from vercel followed by the corresponding route.

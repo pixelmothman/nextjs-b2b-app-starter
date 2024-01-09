@@ -5,6 +5,7 @@ import { MultipleRectSkeleton } from "../ui/skeletons"
 import FavoriteMovies from "../ui/favoriteMovies"
 import FormExample from "../ui/formExample"
 import AccountAndOrgButtons from "../ui/accountBtns"
+import FavMovieFormExample from "../ui/favMovieFormExample"
 
 export default async function Home() {
     const user = await getUserOrRedirect()
@@ -23,9 +24,12 @@ export default async function Home() {
                 </div>
                 <div className="w-full h-full flex flex-row gap-4">
                     <FormExample/>
-                    <Suspense fallback={<MultipleRectSkeleton/>}>
-                        <FavoriteMovies/>
-                    </Suspense>
+                    <div className="w-full h-full flex flex-col gap-4">
+                        <FavMovieFormExample/>
+                        <Suspense fallback={<MultipleRectSkeleton/>}>
+                            <FavoriteMovies/>
+                        </Suspense>
+                    </div>
                 </div>
             </div>
         </div>
