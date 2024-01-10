@@ -40,7 +40,7 @@ export default async function handler(req, res) {
     const {org_id, user_id, role} = msg;
 
     //get the email of the user from Propel
-    const info = await propelauth.fetchUserMetadataByUserId(user_id);
+    const { email } = await propelauth.fetchUserMetadataByUserId(user_id);
 
     console.log(info);
 
