@@ -3,12 +3,6 @@ import { buffer } from "micro";
 import { getSupabaseClient } from "./supabase";
 import { deleteUser } from "@propelauth/node/dist/api/user";
 
-export const config = {
-    api: {
-        bodyParser: false,
-    },
-}
-
 const secret = process.env.SVIX_WEBHOOK_DEL_USER;
 
 export default async function handler(req, res) {
