@@ -1,7 +1,7 @@
 import { Webhook } from "svix";
 import { buffer } from "micro";
+import { propelauth } from "@/app/lib/propelauth";
 import { getSupabaseClient } from "@/app/lib/supabase";
-import { fetchOrg } from "@propelauth/node/dist/api/org.d.ts";
 
 const secret = process.env.SVIX_WEBHOOK_MOD_ORG;
 
@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     const supabase = await getSupabaseClient();
 
     //get the name of the organization
-    const { name } = fetchOrg(org_id);
+    const { name } = propelauth.fetchOrg(org_id)
 
     //update data from the database
     const { error } = await supabase.from("org_table").update({org_name: name}).eq("org_id", org_id);

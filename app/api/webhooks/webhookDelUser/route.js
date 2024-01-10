@@ -1,7 +1,7 @@
 import { Webhook } from "svix";
 import { buffer } from "micro";
+import { propelauth } from "@/app/lib/propelauth";
 import { getSupabaseClient } from "@/app/lib/supabase";
-import { deleteUser } from "@propelauth/node/dist/api/user.d.ts";
 
 const secret = process.env.SVIX_WEBHOOK_DEL_USER;
 
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
     const { org_id, removed_user_id } = msg;
 
     //delete the user from PropelAuth
-    deleteUser(removed_user_id);
+    propelauth.deleteUser(removed_user_id);
 
     //get the supabase client
     const supabase = await getSupabaseClient();
