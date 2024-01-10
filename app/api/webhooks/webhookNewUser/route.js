@@ -3,12 +3,6 @@ import { buffer } from "micro";
 import { propelauth } from "@/app/lib/propelauth";
 import { getSupabaseClient } from "@/app/lib/supabase";
 
-export const config = {
-    api: {
-        bodyParser: false,
-    },
-}
-
 const secret = process.env.SVIX_WEBHOOK_NEW_USER;
 
 export default async function handler(req, res) {

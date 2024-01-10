@@ -2,12 +2,6 @@ import { Webhook } from "svix";
 import { buffer } from "micro";
 import { getSupabaseClient } from "@/app/lib/supabase";
 
-export const config = {
-    api: {
-        bodyParser: false,
-    },
-}
-
 const secret = process.env.SVIX_WEBHOOK_NEW_ORG;
 
 export default async function handler(req, res) {

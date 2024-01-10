@@ -3,13 +3,7 @@ import { buffer } from "micro";
 import { propelauth } from "@/app/lib/propelauth";
 import { getSupabaseClient } from "@/app/lib/supabase";
 
-export const config = {
-    api: {
-        bodyParser: false,
-    },
-}
-
-const secret = process.env.SVIX_WEBHOOK_DEL_USER;
+const secret = process.env.SVIX_WEBHOOK_MOE_USER;
 
 export default async function handler(req, res) {
 
@@ -29,16 +23,16 @@ export default async function handler(req, res) {
     console.log("Webhook verified! Starting to process...");
 
     //extract useful information from the webhook
-    const { org_id, removed_user_id } = msg;
+    const { user_id } = msg;
 
-    //delete the user from PropelAuth
-    propelauth.deleteUser(removed_user_id);
 
     //get the supabase client
     const supabase = await getSupabaseClient();
 
-    //delete from the database
-    const { error } = await supabase.from("user_table").delete().eq("user_id", removed_user_id);
+    //get the name of the organization
+    const { email } = propelauth.fetchUserMetadataByUserId(user_id);
+    //update data from the database
+    const { error } = await supabase.from("user_table").update({user_email: email}).eq("user_id", user_id);
 
     //check for errors
     if(error){
