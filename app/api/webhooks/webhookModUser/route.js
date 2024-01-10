@@ -1,7 +1,7 @@
 import { Webhook } from "svix";
 import { buffer } from "micro";
-import { getSupabaseClient } from "./supabase";
-import { fetchUserMetadataByUserId } from "@propelauth/node/dist/api/user";
+import { getSupabaseClient } from "@/app/lib/supabase";
+import { fetchUserMetadataByUserId } from "@propelauth/node/dist/api/user.d.ts";
 
 const secret = process.env.SVIX_WEBHOOK_MOE_USER;
 

@@ -1,7 +1,7 @@
 import { Webhook } from "svix";
 import { buffer } from "micro";
-import { getSupabaseClient } from "./supabase";
-import { fetchOrg } from "@propelauth/node/dist/api/org";
+import { getSupabaseClient } from "@/app/lib/supabase";
+import { fetchOrg } from "@propelauth/node/dist/api/org.d.ts";
 
 const secret = process.env.SVIX_WEBHOOK_MOD_ORG;
 
