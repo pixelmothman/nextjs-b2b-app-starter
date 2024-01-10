@@ -4,7 +4,7 @@ import { getSupabaseClient } from "@/app/lib/supabase";
 
 const secret = process.env.SVIX_WEBHOOK_DEL_ORG;
 
-export default async function handler(req, res) {
+export async function POST(req, res) {
 
     console.log("Webhook received! Verifying...");
 
