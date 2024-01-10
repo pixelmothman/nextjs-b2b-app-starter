@@ -9,7 +9,8 @@ export async function POST(req, res) {
 
     console.log("Webhook received! Verifying...");
 
-    const payload = (await buffer(req)).toString();
+    const payload = req
+    console.log(payload)
     const headers = req.headers;
 
     const wh = new Webhook(secret);
