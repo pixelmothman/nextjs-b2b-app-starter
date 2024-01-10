@@ -3,14 +3,25 @@ import { buffer } from "@/app/lib/buffer";
 import { propelauth } from "@/app/lib/propelauth";
 import { getSupabaseClient } from "@/app/lib/supabase";
 
+export const config = {
+    api: {
+        bodyParser: false,
+    },
+};
+
 const secret = process.env.SVIX_WEBHOOK_NEW_USER;
 
-export async function POST(req, res) {
+export default async function handler(req, res) {
 
     console.log("Webhook received! Verifying...");
 
-    const payload = req
-    console.log(payload)
+    if(req.method !== "POST"){
+        res.status(405).json({
+            error: "Method not allowed"
+        });
+    }
+
+    const payload = (await buffer(req)).toString();
     const headers = req.headers;
 
     const wh = new Webhook(secret);

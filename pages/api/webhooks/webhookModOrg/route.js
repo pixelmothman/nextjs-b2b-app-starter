@@ -3,11 +3,23 @@ import { buffer } from "@/app/lib/buffer";
 import { propelauth } from "@/app/lib/propelauth";
 import { getSupabaseClient } from "@/app/lib/supabase";
 
-const secret = process.env.SVIX_WEBHOOK_MOE_USER;
+export const config = {
+    api: {
+        bodyParser: false,
+    },
+};
+
+const secret = process.env.SVIX_WEBHOOK_MOD_ORG;
 
 export async function POST(req, res) {
 
     console.log("Webhook received! Verifying...");
+    
+    if(req.method !== "POST"){
+        res.status(405).json({
+            error: "Method not allowed"
+        });
+    }
 
     const payload = (await buffer(req)).toString();
     const headers = req.headers;
@@ -23,16 +35,16 @@ export async function POST(req, res) {
     console.log("Webhook verified! Starting to process...");
 
     //extract useful information from the webhook
-    const { user_id } = msg;
-
+    const { org_id } = msg;
 
     //get the supabase client
     const supabase = await getSupabaseClient();
 
     //get the name of the organization
-    const { email } = propelauth.fetchUserMetadataByUserId(user_id);
+    const { name } = propelauth.fetchOrg(org_id)
+
     //update data from the database
-    const { error } = await supabase.from("user_table").update({user_email: email}).eq("user_id", user_id);
+    const { error } = await supabase.from("org_table").update({org_name: name}).eq("org_id", org_id);
 
     //check for errors
     if(error){

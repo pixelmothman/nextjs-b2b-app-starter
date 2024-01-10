@@ -1,13 +1,24 @@
 import { Webhook } from "svix";
 import { buffer } from "@/app/lib/buffer";
-import { propelauth } from "@/app/lib/propelauth";
 import { getSupabaseClient } from "@/app/lib/supabase";
 
-const secret = process.env.SVIX_WEBHOOK_DEL_USER;
+export const config = {
+    api: {
+        bodyParser: false,
+    },
+};
+
+const secret = process.env.SVIX_WEBHOOK_NEW_ORG;
 
 export async function POST(req, res) {
 
     console.log("Webhook received! Verifying...");
+
+    if(req.method !== "POST"){
+        res.status(405).json({
+            error: "Method not allowed"
+        });
+    }
 
     const payload = (await buffer(req)).toString();
     const headers = req.headers;
@@ -23,16 +34,16 @@ export async function POST(req, res) {
     console.log("Webhook verified! Starting to process...");
 
     //extract useful information from the webhook
-    const { org_id, removed_user_id } = msg;
-
-    //delete the user from PropelAuth
-    propelauth.deleteUser(removed_user_id);
+    const { org_id, name } = msg;
 
     //get the supabase client
     const supabase = await getSupabaseClient();
 
-    //delete from the database
-    const { error } = await supabase.from("user_table").delete().eq("user_id", removed_user_id);
+    //insert data into the database
+    const { error } = await supabase.from("org_table").insert({
+        org_id: org_id,
+        org_name: name
+    })
 
     //check for errors
     if(error){
