@@ -40,7 +40,9 @@ export default async function handler(req, res) {
     const {org_id, user_id, role} = msg;
 
     //get the email of the user from Propel
-    const { email } = await propelauth.fetchUserMetadataByUserId(user_id);
+    const info = await propelauth.fetchUserMetadataByUserId(user_id);
+
+    console.log(info);
 
     //get the supabase client
     const supabase = await getSupabaseClient();
