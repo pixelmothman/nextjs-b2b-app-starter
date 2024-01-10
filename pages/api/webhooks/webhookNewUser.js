@@ -34,6 +34,8 @@ export default async function handler(req, res) {
 
     console.log("Webhook verified! Starting to process...");
 
+    console.log(msg);
+
     //extract useful information from the webhook
     const {org_id, user_id, role} = msg;
 
