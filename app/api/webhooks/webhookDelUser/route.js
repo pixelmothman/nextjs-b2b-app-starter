@@ -1,5 +1,5 @@
 import { Webhook } from "svix";
-import { buffer } from "micro";
+import { buffer } from "@/app/lib/buffer";
 import { propelauth } from "@/app/lib/propelauth";
 import { getSupabaseClient } from "@/app/lib/supabase";
 

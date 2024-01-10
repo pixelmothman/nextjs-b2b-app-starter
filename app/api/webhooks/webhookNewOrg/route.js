@@ -1,5 +1,5 @@
 import { Webhook } from "svix";
-import { buffer } from "micro";
+import { buffer } from "@/app/lib/buffer";
 import { getSupabaseClient } from "@/app/lib/supabase";
 
 const secret = process.env.SVIX_WEBHOOK_NEW_ORG;
