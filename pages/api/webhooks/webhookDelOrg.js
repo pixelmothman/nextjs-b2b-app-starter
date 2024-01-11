@@ -1,6 +1,7 @@
 import { Webhook } from "svix";
 import { buffer } from "@/lib/buffer";
 import { getSupabaseClient } from "@/lib/supabase";
+import { propelauth } from "@/lib/propelauth";
 
 export const config = {
     api: {
@@ -41,6 +42,14 @@ export default async function POST(req, res) {
 
     //delete from the database
     const { error } = await supabase.from("org_table").delete().eq("org_id", org_id);
+
+    //fetch users from the org from PropelAuth
+    const users = await propelauth.fetchUsersInOrg(org_id)
+
+    //delete the users from PropelAuth
+    for(let i = 0; i < users.length; i++){
+        await propelauth.deleteUser(users.users[i].userId);
+    }
 
     //check for errors
     if(error){
