@@ -44,12 +44,14 @@ export default async function POST(req, res) {
     const { error } = await supabase.from("org_table").delete().eq("org_id", org_id);
 
     //fetch users from the org from PropelAuth
-    const users = await propelauth.fetchUsersInOrg(org_id)
+    const users = await propelauth.fetchUsersInOrg(org_id);
+
+    console.log("Users to be deleted: ", users);
 
     //delete the users from PropelAuth
     for(let i = 0; i < users.length; i++){
         await propelauth.deleteUser(users.users[i].userId);
-    }
+    };
 
     //check for errors
     if(error){
@@ -57,7 +59,7 @@ export default async function POST(req, res) {
         res.status(500).json({
             error: "Error inserting data into the database"
         });
-    }
+    };
 
     res.json({message: "Webhook processed successfully!"});
 };
