@@ -39,10 +39,8 @@ export default async function handler(req, res) {
     //extract useful information from the webhook
     const {org_id, user_id, role} = msg;
 
-    console.log(org_id, user_id, role);
-
     //get the email of the user from Propel
-    const { email } = await propelauth.fetchUserMetadataByUserId(user_id);
+    const info = await propelauth.fetchOrg(org_id)
 
     console.log(info);
 
