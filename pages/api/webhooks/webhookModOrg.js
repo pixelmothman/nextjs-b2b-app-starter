@@ -41,7 +41,7 @@ export async function POST(req, res) {
     const supabase = await getSupabaseClient();
 
     //get the name of the organization
-    const { name } = propelauth.fetchOrg(org_id)
+    const { name } = await propelauth.fetchOrg(org_id)
 
     //update data from the database
     const { error } = await supabase.from("org_table").update({org_name: name}).eq("org_id", org_id);

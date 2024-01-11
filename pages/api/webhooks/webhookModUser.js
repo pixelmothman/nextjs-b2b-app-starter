@@ -37,12 +37,12 @@ export async function POST(req, res) {
     //extract useful information from the webhook
     const { user_id } = msg;
 
-
     //get the supabase client
     const supabase = await getSupabaseClient();
 
-    //get the name of the organization
-    const { email } = propelauth.fetchUserMetadataByUserId(user_id);
+    //get the new email of the user from Propel
+    const { email } = await propelauth.fetchUserMetadataByUserId(user_id);
+
     //update data from the database
     const { error } = await supabase.from("user_table").update({user_email: email}).eq("user_id", user_id);
 

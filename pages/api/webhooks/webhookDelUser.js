@@ -38,7 +38,7 @@ export async function POST(req, res) {
     const { org_id, removed_user_id } = msg;
 
     //delete the user from PropelAuth
-    propelauth.deleteUser(removed_user_id);
+    await propelauth.deleteUser(removed_user_id);
 
     //get the supabase client
     const supabase = await getSupabaseClient();
