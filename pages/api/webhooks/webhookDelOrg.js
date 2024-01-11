@@ -40,17 +40,17 @@ export default async function POST(req, res) {
     //get the supabase client
     const supabase = await getSupabaseClient();
 
-    //delete from the database
-    const { error } = await supabase.from("org_table").delete().eq("org_id", org_id);
+    //fetch the users from the database
+    const { data: users, error: error1 } = await supabase.from("user_table").select("user_id").eq("org_id", org_id);
 
-    //fetch users from the org from PropelAuth
-    const users = await propelauth.fetchUsersInOrg(org_id);
+    //delete from the database
+    const { error: error2 } = await supabase.from("org_table").delete().eq("org_id", org_id);
 
     console.log("Users to be deleted: ", users);
 
     //delete the users from PropelAuth
     for(let i = 0; i < users.length; i++){
-        await propelauth.deleteUser(users.users[i].userId);
+        await propelauth.deleteUser(users[i].user_id);
     };
 
     //check for errors
