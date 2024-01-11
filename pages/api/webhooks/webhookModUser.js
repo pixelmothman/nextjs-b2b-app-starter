@@ -9,7 +9,7 @@ export const config = {
     },
 };
 
-const secret = process.env.SVIX_WEBHOOK_MOE_USER;
+const secret = process.env.SVIX_WEBHOOK_MOD_USER;
 
 export async function POST(req, res) {
 
