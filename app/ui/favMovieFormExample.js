@@ -1,6 +1,6 @@
 'use client'
 
-import { uploadFavMovie } from "../lib/actions"
+import { uploadFavMovie } from "@/lib/actions"
 
 export default function FavMovieFormExample(){
 

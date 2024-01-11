@@ -1,7 +1,7 @@
 import { Webhook } from "svix";
-import { buffer } from "@/app/lib/buffer";
-import { propelauth } from "@/app/lib/propelauth";
-import { getSupabaseClient } from "@/app/lib/supabase";
+import { buffer } from "@/lib/buffer";
+import { propelauth } from "@/lib/propelauth";
+import { getSupabaseClient } from "@/lib/supabase";
 
 export const config = {
     api: {

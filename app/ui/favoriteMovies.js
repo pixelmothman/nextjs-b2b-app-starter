@@ -1,4 +1,4 @@
-import { fetchFavoriteMovies } from "../lib/data";
+import { fetchFavoriteMovies } from "@/lib/data";
 
 export default async function FavoriteMovies(){
     const favMovies = await fetchFavoriteMovies();

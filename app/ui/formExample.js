@@ -1,6 +1,6 @@
 'use client'
 
-import { createExampleMessage } from "../lib/actions"
+import { createExampleMessage } from "@/lib/actions"
 
 export default function FormExample(){
 

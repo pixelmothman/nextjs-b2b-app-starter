@@ -1,7 +1,7 @@
 import { Webhook } from "svix";
-import { buffer } from "@/app/lib/buffer";
-import { propelauth } from "@/app/lib/propelauth";
-import { getSupabaseClient } from "@/app/lib/supabase";
+import { buffer } from "@/lib/buffer";
+import { propelauth } from "@/lib/propelauth";
+import { getSupabaseClient } from "@/lib/supabase";
 
 export const config = {
     api: {
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
     const {org_id, user_id, role} = msg;
 
     //get the email of the user from Propel
-    const info = await propelauth.fetchOrg(org_id)
+    const info = await propelauth.fetchUserMetadataByUserId(user_id);
 
     console.log(info);
 
