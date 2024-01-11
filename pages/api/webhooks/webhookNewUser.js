@@ -34,15 +34,11 @@ export default async function handler(req, res) {
 
     console.log("Webhook verified! Starting to process...");
 
-    console.log(msg);
-
     //extract useful information from the webhook
     const {org_id, user_id, role} = msg;
 
     //get the email of the user from Propel
-    const info = await propelauth.fetchUserMetadataByUserId(user_id);
-
-    console.log(info);
+    const { email } = await propelauth.fetchUserMetadataByUserId(user_id);
 
     //get the supabase client
     const supabase = await getSupabaseClient();
