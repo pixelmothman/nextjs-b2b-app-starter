@@ -11,7 +11,7 @@ export const config = {
 
 const secret = process.env.SVIX_WEBHOOK_MOD_ORG;
 
-export async function POST(req, res) {
+export default async function POST(req, res) {
 
     console.log("Webhook received! Verifying...");
     
