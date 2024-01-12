@@ -65,6 +65,18 @@ Create a new database with the following tables (for the example):
         constraint fav_movies_table_user_id_fkey foreign key (user_id) references user_table (user_id) on update cascade on delete cascade
     ) tablespace pg_default;
 
+- Organizations to be deleted (for cron jobs)
+
+    create table
+    public.org_to_delete_table (
+        org_id uuid not null,
+        user_id uuid null,
+        created_at timestamp with time zone not null default now(),
+        constraint org_to_delete_table_pkey primary key (org_id),
+        constraint org_to_delete_table_org_id_fkey foreign key (org_id) references org_table (org_id),
+        constraint org_to_delete_table_user_id_fkey foreign key (user_id) references user_table (user_id)
+    ) tablespace pg_default;
+
 ## Add user and org
 
 While in dev mode just manually add to supabase.
