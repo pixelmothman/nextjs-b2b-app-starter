@@ -1,5 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
+import '@radix-ui/themes/styles.css';
+import { Theme } from '@radix-ui/themes';
 import {AuthProvider, RedirectToSignupOptions} from "@propelauth/nextjs/client";
 
 const inter = Inter({ subsets: ['latin'] })
@@ -12,11 +14,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased w-screen h-screen bg-neutral-100`}>
-        <AuthProvider authUrl={process.env.NEXT_PUBLIC_AUTH_URL}>
-        {children}
-        </AuthProvider>
-      </body>
+      <AuthProvider authUrl={process.env.NEXT_PUBLIC_AUTH_URL}>
+        <body className={`${inter.className} antialiased w-screen h-screen bg-neutral-100`}>
+          <Theme>
+            {children}
+          </Theme>
+        </body>
+      </AuthProvider>
     </html>
   )
 }

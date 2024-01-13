@@ -26,7 +26,7 @@ export default async function FavoriteMovies(){
                 ) : (
                     <div className="w-full h-fit">
                         <span className="text-base font-semibold">
-                            Here could go a button to tell the user to add their favorite movies
+                            No movies yet.
                         </span>
                     </div>
                 )
