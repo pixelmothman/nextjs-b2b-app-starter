@@ -5,10 +5,10 @@ export default async function FavoriteMovies(){
 
     return(
         <div className="w-full h-full flex flex-col p-5 rounded-sm bg-neutral-800 shadow-sm overflow-y-auto">
-            <h2 className="text-2xl font-bold text-zinc-200">
+            <h2 className="text-2xl font-bold text-neutral-200">
             Favorite movies
             </h2>
-            <p className="text-zinc-200 mb-4">
+            <p className="text-neutral-200 mb-4">
             Simulating fetching from a database.
             </p>
             <div className="flex flex-col gap-2">
@@ -25,7 +25,7 @@ export default async function FavoriteMovies(){
                     })
                 ) : (
                     <div className="w-full h-fit">
-                        <span className="text-base font-semibold">
+                        <span className="text-base font-semibold text-neutral-200">
                             No movies yet.
                         </span>
                     </div>

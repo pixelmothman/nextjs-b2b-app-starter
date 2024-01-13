@@ -1,7 +1,6 @@
 import { getUserOrRedirect } from "@propelauth/nextjs/server/app-router";
-import LogoutButton from "../ui/logoutBtn";
-import AccountAndOrgButtons from "../ui/accountBtns";
 import Link from "next/link";
+import MainMenuDropDown from "../ui/mainMenuDropDown";
 
 export default async function DashLayout( { children }) {
     const user = await getUserOrRedirect()
@@ -14,8 +13,7 @@ export default async function DashLayout( { children }) {
                         NextJS Starter
                     </Link>
                     <div className="w-fit h-fit flex flex-row gap-4">
-                        <AccountAndOrgButtons/>
-                        <LogoutButton/>
+                        <MainMenuDropDown/>
                     </div>
                 </div>
                 <>
