@@ -15,8 +15,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <AuthProvider authUrl={process.env.NEXT_PUBLIC_AUTH_URL}>
-        <body className={`${inter.className} antialiased w-screen h-screen bg-neutral-100`}>
-          <Theme>
+        <body>
+          <Theme className={`${inter.className} antialiased w-screen h-screen bg-neutral-100`}>
             {children}
           </Theme>
         </body>
