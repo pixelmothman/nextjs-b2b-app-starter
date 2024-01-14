@@ -4,11 +4,11 @@ export default async function FavoriteMovies(){
     const favMovies = await fetchFavoriteMovies();
 
     return(
-        <div className="w-full h-full flex flex-col p-5 rounded-sm bg-neutral-800 shadow-sm overflow-y-auto">
-            <h2 className="text-2xl font-bold text-neutral-200">
+        <div className="w-full h-full flex flex-col p-5 rounded-sm bg-white border border-neutral-800 shadow-sm overflow-y-auto">
+            <h2 className="text-2xl font-bold text-neutral-800">
             Favorite movies
             </h2>
-            <p className="text-neutral-200 mb-4">
+            <p className="text-neutral-800 mb-4">
             Simulating fetching from a database.
             </p>
             <div className="flex flex-col gap-2">
@@ -17,7 +17,7 @@ export default async function FavoriteMovies(){
                     favMovies.map((movie, index) => {
                         return (
                             <div key={movie + index} className="w-full h-fit">
-                                <span className="text-base font-semibold">
+                                <span className="text-base font-semibold text-neutral-800">
                                     {movie}
                                 </span>
                             </div>
@@ -25,7 +25,7 @@ export default async function FavoriteMovies(){
                     })
                 ) : (
                     <div className="w-full h-fit">
-                        <span className="text-base font-semibold text-neutral-200">
+                        <span className="text-base font-semibold text-neutral-800">
                             No movies yet.
                         </span>
                     </div>

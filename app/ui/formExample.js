@@ -5,31 +5,31 @@ import { createExampleMessage } from "@/lib/actions"
 export default function FormExample(){
 
     return (
-        <div className="w-full h-full flex flex-col p-5 rounded-sm bg-neutral-800 shadow-sm overflow-y-auto">
-            <h2 className="text-2xl font-bold text-zinc-200">
+        <div className="w-full h-full flex flex-col p-5 rounded-sm bg-white border border-neutral-800 shadow-sm overflow-y-auto">
+            <h2 className="text-2xl font-bold text-neutral-800">
             Get a message from the machine
             </h2>
-            <p className="text-zinc-200 mb-4">
+            <p className="text-neutral-800 mb-4">
             After completing the form, you will be redirected to a page with a message from the machine.
             </p>
             <form action={createExampleMessage} className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="username-example" className="font-bold text-sm text-zinc-200">
+                    <label htmlFor="username-example" className="font-bold text-sm text-neutral-800">
                     Username
                     </label>
-                    <input id="username-example" name="username-example" className="w-full h-10 px-4 py-2 rounded-md bg-zinc-600 text-zinc-200"/>
+                    <input autoComplete="off" type="text" id="username-example" name="username-example" className="w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800  outline-0 ring-0 border-0 focus-visible:ring-black"/>
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="age-example" className="font-bold text-sm text-zinc-200">
+                    <label htmlFor="age-example" className="font-bold text-sm text-neutral-800">
                     Age
                     </label>
-                    <input id="age-example" name="age-example" className="w-full h-10 px-4 py-2 rounded-md bg-zinc-600 text-zinc-200"/>
+                    <input autoComplete="off" type="text" id="age-example" name="age-example" className="w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800  outline-0 ring-0 border-0 focus-visible:ring-black"/>
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="movie-genre-example" className="font-bold text-sm text-zinc-200">
+                    <label htmlFor="movie-genre-example" className="font-bold text-sm text-neutral-800">
                     Favorite movie genre
                     </label>
-                    <select id="movie-genre-example" name="movie-genre-example" className="w-full h-10 px-4 py-2 rounded-md bg-zinc-600 text-zinc-200">
+                    <select id="movie-genre-example" name="movie-genre-example" className="w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800  outline-0 ring-0 border-0 focus-visible:ring-black">
                         <option value="horror">
                             Horror
                         </option>
