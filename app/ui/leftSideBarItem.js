@@ -16,7 +16,7 @@ export default function LeftSideBarItem( props ){
         },
         {
             name: "Page 2",
-            icon: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path d="M224,196h-4V40a12,12,0,0,0-12-12H152a12,12,0,0,0-12,12V76H96A12,12,0,0,0,84,88v36H48a12,12,0,0,0-12,12v60H32a12,12,0,0,0,0,24H224a12,12,0,0,0,0-24ZM164,52h32V196H164Zm-56,48h32v96H108ZM60,148H84v48H60Z"></path></svg>,
+            icon: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path d="M216,36H80A20,20,0,0,0,60,56V68H40A20,20,0,0,0,20,88V200a20,20,0,0,0,20,20H184a20,20,0,0,0,20-20V180h12a20,20,0,0,0,20-20V56A20,20,0,0,0,216,36ZM84,60H212v45.09l-3.23-3.23a20,20,0,0,0-28.28,0L165.31,117,130.14,81.86a20,20,0,0,0-28.28,0L84,99.72Zm96,136H44V92H60v68a20,20,0,0,0,20,20H180ZM84,156V133.66l32-32,40.83,40.83a12,12,0,0,0,17,0l20.83-20.83L212,139v17Z"></path></svg>,
             link: `/dash/example-one`
         },
     ];
@@ -28,7 +28,7 @@ export default function LeftSideBarItem( props ){
         <Tooltip.Provider>
             <Tooltip.Root>
                 <Tooltip.Trigger asChild>
-                    <Link href={arrayOfIcons[indexOfIcon].link} className={`flex items-center justify-center w-8 h-8 fill-neutral-700 border border-neutral-500 rounded-md ${
+                    <Link href={arrayOfIcons[indexOfIcon].link} className={`flex items-center justify-center w-8 h-8 border border-neutral-500 rounded-md ${
                         pathname === arrayOfIcons[indexOfIcon].link ? "bg-neutral-800 fill-neutral-100" : "bg-neutral-100 fill-neutral-700"
                     }`}>
                         {arrayOfIcons[indexOfIcon].icon}

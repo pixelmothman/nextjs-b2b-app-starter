@@ -1,10 +1,14 @@
-export default async function FavMovieFormExample(){
+'use client'
+
+import StyledDropzone from "@/app/ui/uploadImageForm";
+import StyledDropzoneMultipleImages from "@/app/ui/uploadImagesForm";
+
+export default function FavMovieFormExample(){
 
     return (
-        <div className="w-full h-full flex flex-col p-5 rounded-sm bg-white border border-neutral-800 shadow-sm overflow-y-auto">
-            <h2 className="text-2xl font-bold text-neutral-800">
-            Example One Page
-            </h2>
+        <div className="w-full h-full flex flex-row gap-4">
+            <StyledDropzone/>
+            <StyledDropzoneMultipleImages/>
         </div>
     )
 };

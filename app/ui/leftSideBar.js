@@ -10,7 +10,7 @@ export default function LeftSideBar() {
     ];
 
     return (
-        <div className="w-16 h-full bg-neutral-100 mt-[1px] ring-1 ring-neutral-800">
+        <div className="w-16 min-w-16 h-full bg-neutral-100 mt-[1px] ring-1 ring-neutral-800">
             <div className="w-full h-full flex flex-col gap-4 items-center pt-4">
                 {
                     LeftSideBarItems.map((item, index) => {

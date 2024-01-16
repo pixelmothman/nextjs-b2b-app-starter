@@ -1,4 +1,4 @@
-A starter template that uses NextJS, TailwindCSS, PropelAuth, and Supabase.
+A starter template that uses NextJS, Zod, TailwindCSS, PropelAuth, and Supabase.
 
 ## Getting Started with NextJS Starter
 
@@ -76,6 +76,8 @@ Create a new database with the following tables (for the example):
         constraint org_to_delete_table_org_id_fkey foreign key (org_id) references org_table (org_id) on delete cascade,
         constraint org_to_delete_table_user_id_fkey foreign key (user_id) references user_table (user_id)
     ) tablespace pg_default;
+
+Create a new bucket in Supabase storage using their gui. Name of bucket: images.
 
 ## Add user and org
 
