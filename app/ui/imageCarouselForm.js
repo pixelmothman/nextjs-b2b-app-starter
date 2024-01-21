@@ -30,7 +30,7 @@ export default function ImageCarouselForm({imageListCounter, offset, onOffsetCha
             {
                 imageListCounter > 4 && offset !== imageListCounter ? (
                     <form action={formAction} disabled={pending} className="flex flex-col gap-4">
-                        <input autoComplete="off" type="text" value={
+                        <input autoComplete="off" type="hidden" value={
                             offset
                         } id="off-img-number" name="off-img-number" className="form-input w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800 outline-0 ring-0 border-0 focus-visible:ring-black"/>
                         <ImageCarouselBtn/>
