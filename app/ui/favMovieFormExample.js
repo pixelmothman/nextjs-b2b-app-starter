@@ -7,7 +7,7 @@ export default function FavMovieFormExample(){
     return (
         <div className="w-full h-full flex flex-col p-5 rounded-sm bg-white border border-neutral-800 shadow-sm overflow-y-auto">
             <h2 className="text-2xl font-bold text-neutral-800">
-            Write your favorite movie
+            Upload your favorite movie
             </h2>
             <p className="text-neutral-800 mb-4">
             After completing the form, your favorite movie should appear in the list.

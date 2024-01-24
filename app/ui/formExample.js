@@ -10,7 +10,7 @@ export default function FormExample(){
             Get a message from the machine
             </h2>
             <p className="text-neutral-800 mb-4">
-            After completing the form, you will be redirected to a page with a message from the machine.
+            After completing the form, you will be redirected to a page with a message made with the data you entered.
             </p>
             <form action={createExampleMessage} className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
