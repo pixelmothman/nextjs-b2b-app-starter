@@ -34,7 +34,7 @@ export default function LeftSideBarItem( props ){
             <Tooltip.Root>
                 <Tooltip.Trigger asChild>
                     <Link href={arrayOfIcons[indexOfIcon].link} className={`flex items-center justify-center w-8 h-8 border border-neutral-500 rounded-md ${
-                        pathname === arrayOfIcons[indexOfIcon].link ? "bg-neutral-800 fill-neutral-100" : "bg-neutral-100 fill-neutral-700"
+                       pathname === arrayOfIcons[indexOfIcon].link.slice(0, arrayOfIcons[indexOfIcon].link.indexOf("?")) || pathname === arrayOfIcons[indexOfIcon].link ? "bg-neutral-800 fill-neutral-100" : "bg-white fill-neutral-700"
                     }`}>
                         {arrayOfIcons[indexOfIcon].icon}
                     </Link>
