@@ -40,7 +40,7 @@ export default async function CalendarTable({
     // Calculate the total number of items (days) to display in the calendar view
     const totalSlots = 7 * 5; // 5 weeks, 7 days each, to accommodate the maximum possible month display
     const daysBeforeMonthStarts = firstDayOfTheMonthNumber - 1;
-    const daysAfterMonthEnds = totalSlots - (daysBeforeMonthStarts + numberOfDaysInTheMonth);
+    const daysAfterMonthEnds = totalSlots - (daysBeforeMonthStarts + numberOfDaysInTheMonth) > 4 ? 4 : totalSlots - (daysBeforeMonthStarts + numberOfDaysInTheMonth);
 
     // Days before the first day of the month
     for (let i = 0; i < daysBeforeMonthStarts; i++) {
@@ -78,6 +78,7 @@ export default async function CalendarTable({
                 arrayOfDays.map((day, index) => {
                     return (
                         <div key={index} className={`w-full h-full flex flex-col p-2 rounded-md ${
+                            day.day === "" ? "bg-neutral-100" :
                             day.year === Number(searchParams.day.split("-")[0]) && 
                             day.month === Number(searchParams.day.split("-")[1]) && 
                             day.day === Number(searchParams.day.split("-")[2]) ? 
