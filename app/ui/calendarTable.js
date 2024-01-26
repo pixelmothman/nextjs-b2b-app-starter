@@ -26,21 +26,19 @@ export default async function CalendarTable({
     //names of months
     const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
-    //calculates the first and last day of the month, both name and number
-    const firstDayOfTheMonthNumber = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
-    const lasttDayOfTheMonthNumber = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();
-    const firstDayOfTheMonthString = new Date(date.getFullYear(), date.getMonth(), 1).toDateString().slice(0, 3);
-    const lasttDayOfTheMonthString = new Date(date.getFullYear(), date.getMonth() + 1, 0).toDateString().slice(0, 3);
+    let firstDayOfTheMonthNumber = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+    let lasttDayOfTheMonthNumber = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();
 
-    //function that calculates the number of days in the current month
+    // Adjust the day numbers to start from Monday
+    firstDayOfTheMonthNumber = firstDayOfTheMonthNumber === 0 ? 7 : firstDayOfTheMonthNumber;
+    lasttDayOfTheMonthNumber = lasttDayOfTheMonthNumber === 0 ? 7 : lasttDayOfTheMonthNumber;
+
     const numberOfDaysInTheMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 
     const arrayOfDays = [];
-
-    // Calculate the total number of items (days) to display in the calendar view
-    const totalSlots = 7 * 5; // 5 weeks, 7 days each, to accommodate the maximum possible month display
+    const totalSlots = 7 * 6;
     const daysBeforeMonthStarts = firstDayOfTheMonthNumber - 1;
-    const daysAfterMonthEnds = totalSlots - (daysBeforeMonthStarts + numberOfDaysInTheMonth) > 4 ? 4 : totalSlots - (daysBeforeMonthStarts + numberOfDaysInTheMonth);
+    const daysAfterMonthEnds = totalSlots - (daysBeforeMonthStarts + numberOfDaysInTheMonth) % totalSlots;
 
     // Days before the first day of the month
     for (let i = 0; i < daysBeforeMonthStarts; i++) {
@@ -73,12 +71,12 @@ export default async function CalendarTable({
     };
 
     return (
-        <div className="w-full h-full grid grid-cols-7 gap-4">
+        <div className="w-full h-full grid grid-cols-7 grid-rows-6 gap-4">
             {
                 arrayOfDays.map((day, index) => {
                     return (
                         <div key={index} className={`w-full h-full flex flex-col p-2 rounded-md ${
-                            day.day === "" ? "bg-neutral-100" :
+                            day.day === "" ? "outline outline-1 outline-neutral-300 shadow-sm" : 
                             day.year === Number(searchParams.day.split("-")[0]) && 
                             day.month === Number(searchParams.day.split("-")[1]) && 
                             day.day === Number(searchParams.day.split("-")[2]) ? 
