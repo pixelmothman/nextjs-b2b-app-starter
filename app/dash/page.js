@@ -7,14 +7,12 @@ import FavMovieFormExample from "../ui/favMovieFormExample"
 export default async function Home() {
 
     return (
-        <div className="w-full h-full flex flex-row gap-4">
+        <div className="w-full h-full grid grid-cols-2 gap-4">
+            <FavMovieFormExample/>
+            <Suspense fallback={<MultipleRectSkeleton/>}>
+                <FavoriteMovies/>
+            </Suspense>
             <FormExample/>
-            <div className="w-full h-full flex flex-col gap-4">
-                <FavMovieFormExample/>
-                <Suspense fallback={<MultipleRectSkeleton/>}>
-                    <FavoriteMovies/>
-                </Suspense>
-            </div>
         </div>
     )
 };

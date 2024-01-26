@@ -11,7 +11,7 @@ export default async function Calendar({searchParams}){
     //query example: ?month=06&year=2024&day=12
 
     return (
-        <div className="w-full h-full flex flex-col gap-4 p-5 border border-neutral-800 shadow-sm">
+        <div className="w-full h-full flex flex-col gap-4 p-5 rounded-sm bg-white border border-neutral-800 shadow-sm">
             <h2 className="text-2xl font-bold text-neutral-800">
             Calendar
             </h2>
