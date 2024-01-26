@@ -7,6 +7,7 @@ export default function LeftSideBar() {
     const LeftSideBarItems = [
         "Page 1",
         "Page 2",
+        "Page 3",
     ];
 
     return (
