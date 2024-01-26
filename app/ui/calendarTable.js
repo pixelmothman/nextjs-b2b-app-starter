@@ -50,7 +50,7 @@ export default async function CalendarTable({
             year: '',
             name: ''
         });
-    }
+    };
     
     // Days in the current month
     for (let i = 1; i <= numberOfDaysInTheMonth; i++) {
@@ -60,7 +60,7 @@ export default async function CalendarTable({
             year: date.getFullYear(),
             name: days[new Date(date.getFullYear(), date.getMonth(), i).getDay()]
         });
-    }
+    };
     
     // Days after the last day of the month
     for (let i = 0; i < daysAfterMonthEnds; i++) {
@@ -70,7 +70,7 @@ export default async function CalendarTable({
             year: '',
             name: ''
         });
-    }
+    };
 
     return (
         <div className="w-full h-full grid grid-cols-7 gap-4">
@@ -78,7 +78,11 @@ export default async function CalendarTable({
                 arrayOfDays.map((day, index) => {
                     return (
                         <div key={index} className={`w-full h-full flex flex-col p-2 rounded-md ${
-                            day.year === date.getFullYear() && day.month === date.getMonth() + 1 && day.day === date.getDate() ? "outline outline-2 outline-neutral-800 shadow-md" : "outline outline-1 outline-neutral-800 shadow-sm"
+                            day.year === Number(searchParams.day.split("-")[0]) && 
+                            day.month === Number(searchParams.day.split("-")[1]) && 
+                            day.day === Number(searchParams.day.split("-")[2]) ? 
+                            "outline outline-2 outline-neutral-800 shadow-md shadow-neutral-400" : 
+                            "outline outline-1 outline-neutral-800 shadow-sm"
                         }`}>
                             <span className="text-sm font-bold text-neutral-800">
                                 {day.name.slice(0,3)} {day.day}
