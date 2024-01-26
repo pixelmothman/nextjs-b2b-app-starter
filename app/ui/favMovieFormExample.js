@@ -19,7 +19,7 @@ export default function FavMovieFormExample(){
                     </label>
                     <input autoComplete="off" type="text" id="movie-example" name="movie-example" className="form-input w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800 outline-0 ring-0 border-0 focus-visible:ring-black"/>
                 </div>
-                <button type="submit" className="self-end w-fit px-4 py-2 bg-blue-500 hover:bg-blue-700 text-zinc-100 font-bold rounded-md">Upload</button>
+                <button type="submit" className="self-end w-fit px-4 py-2 border border-neutral-800 rounded-md shadow-sm text-sm font-bold text-neutral-800 hover:bg-neutral-800 hover:text-neutral-100">Upload</button>
             </form>
         </div>
     )

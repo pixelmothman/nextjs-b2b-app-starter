@@ -10,20 +10,22 @@ export default function FormExample(){
             Get a message from the machine
             </h2>
             <p className="text-neutral-800 mb-4">
-            After completing the form, you will be redirected to a page with a message made with the data you entered.
+            After completing the form, you will be redirected to a page with a message created using data from the url.
             </p>
             <form action={createExampleMessage} className="flex flex-col gap-4">
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="username-example" className="font-bold text-sm text-neutral-800">
-                    Username
-                    </label>
-                    <input autoComplete="off" type="text" id="username-example" name="username-example" className="w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800  outline-0 ring-0 border-0 focus-visible:ring-black"/>
+                <div className="w-full flex flex-row gap-4">
+                    <div className="w-full flex flex-col gap-2">
+                        <label htmlFor="username-example" className="font-bold text-sm text-neutral-800">
+                        Username
+                        </label>
+                        <input autoComplete="off" type="text" id="username-example" name="username-example" className="w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800  outline-0 ring-0 border-0 focus-visible:ring-black"/>
+                    </div>
+                    <div className="w-full flex flex-col gap-2">
+                        <label htmlFor="age-example" className="font-bold text-sm text-neutral-800">
+                        Age
+                        </label>
+                        <input autoComplete="off" type="text" id="age-example" name="age-example" className="w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800  outline-0 ring-0 border-0 focus-visible:ring-black"/>
                 </div>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="age-example" className="font-bold text-sm text-neutral-800">
-                    Age
-                    </label>
-                    <input autoComplete="off" type="text" id="age-example" name="age-example" className="w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800  outline-0 ring-0 border-0 focus-visible:ring-black"/>
                 </div>
                 <div className="flex flex-col gap-2">
                     <label htmlFor="movie-genre-example" className="font-bold text-sm text-neutral-800">
@@ -44,7 +46,7 @@ export default function FormExample(){
                         </option>
                     </select> 
                 </div>
-                <button type="submit" className="self-end w-fit px-4 py-2 bg-blue-500 hover:bg-blue-700 text-zinc-100 font-bold rounded-md">Get the message</button>
+                <button type="submit" className="self-end w-fit px-4 py-2 border border-neutral-800 rounded-md shadow-sm text-sm font-bold text-neutral-800 hover:bg-neutral-800 hover:text-neutral-100">Get the message</button>
             </form>
         </div>
     )
