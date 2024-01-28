@@ -17,7 +17,7 @@ export default function FavMovieFormExample(){
                     <label htmlFor="movie-example" className="font-bold text-sm text-neutral-800">
                     Movie
                     </label>
-                    <input autoComplete="off" type="text" id="movie-example" name="movie-example" className="form-input w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800 outline-0 ring-0 border-0 focus-visible:ring-black"/>
+                    <input autoComplete="off" type="text" id="movie-example" name="movie-example" className="w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black"/>
                 </div>
                 <button type="submit" className="self-end w-fit px-4 py-2 border border-neutral-800 rounded-md shadow-sm text-sm font-bold text-neutral-800 hover:bg-neutral-800 hover:text-neutral-100">Upload</button>
             </form>

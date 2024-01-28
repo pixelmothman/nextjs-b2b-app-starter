@@ -18,20 +18,20 @@ export default function FormExample(){
                         <label htmlFor="username-example" className="font-bold text-sm text-neutral-800">
                         Username
                         </label>
-                        <input autoComplete="off" type="text" id="username-example" name="username-example" className="w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800  outline-0 ring-0 border-0 focus-visible:ring-black"/>
+                        <input autoComplete="off" type="text" id="username-example" name="username-example" className="w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black"/>
                     </div>
                     <div className="w-full flex flex-col gap-2">
                         <label htmlFor="age-example" className="font-bold text-sm text-neutral-800">
                         Age
                         </label>
-                        <input autoComplete="off" type="text" id="age-example" name="age-example" className="w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800  outline-0 ring-0 border-0 focus-visible:ring-black"/>
+                        <input autoComplete="off" type="text" id="age-example" name="age-example" className="w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black"/>
                 </div>
                 </div>
                 <div className="flex flex-col gap-2">
                     <label htmlFor="movie-genre-example" className="font-bold text-sm text-neutral-800">
                     Favorite movie genre
                     </label>
-                    <select id="movie-genre-example" name="movie-genre-example" className="w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800  outline-0 ring-0 border-0 focus-visible:ring-black">
+                    <select id="movie-genre-example" name="movie-genre-example" className="w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black">
                         <option value="horror">
                             Horror
                         </option>
