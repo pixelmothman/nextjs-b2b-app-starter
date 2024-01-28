@@ -12,39 +12,41 @@ export default function FormExample(){
             <p className="text-neutral-800 mb-4">
             After completing the form, you will be redirected to a page with a message created using data from the url.
             </p>
-            <form action={createExampleMessage} className="flex flex-col gap-4">
-                <div className="w-full flex flex-row gap-4">
-                    <div className="w-full flex flex-col gap-2">
-                        <label htmlFor="username-example" className="font-bold text-sm text-neutral-800">
-                        Username
-                        </label>
-                        <input autoComplete="off" type="text" id="username-example" name="username-example" className="w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black"/>
+            <form action={createExampleMessage} className="w-full h-full flex flex-col gap-4 justify-between">
+                <div className="flex flex-col gap-4">
+                    <div className="w-full flex flex-row gap-4">
+                        <div className="w-full flex flex-col gap-2">
+                            <label htmlFor="username-example" className="font-bold text-sm text-neutral-800">
+                            Username
+                            </label>
+                            <input autoComplete="off" type="text" id="username-example" name="username-example" className="w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black"/>
+                        </div>
+                        <div className="w-full flex flex-col gap-2">
+                            <label htmlFor="age-example" className="font-bold text-sm text-neutral-800">
+                            Age
+                            </label>
+                            <input autoComplete="off" type="text" id="age-example" name="age-example" className="w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black"/>
+                        </div>
                     </div>
-                    <div className="w-full flex flex-col gap-2">
-                        <label htmlFor="age-example" className="font-bold text-sm text-neutral-800">
-                        Age
+                    <div className="flex flex-col gap-2">
+                        <label htmlFor="movie-genre-example" className="font-bold text-sm text-neutral-800">
+                        Favorite movie genre
                         </label>
-                        <input autoComplete="off" type="text" id="age-example" name="age-example" className="w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black"/>
-                </div>
-                </div>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="movie-genre-example" className="font-bold text-sm text-neutral-800">
-                    Favorite movie genre
-                    </label>
-                    <select id="movie-genre-example" name="movie-genre-example" className="w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black">
-                        <option value="horror">
-                            Horror
-                        </option>
-                        <option value="sci-fi">
-                            Science Fiction
-                        </option>
-                        <option value="romantic comedies">
-                            Romantic Comedies
-                        </option>
-                        <option value="action">
-                            Action
-                        </option>
-                    </select> 
+                        <select id="movie-genre-example" name="movie-genre-example" className="w-full h-10 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black">
+                            <option value="horror">
+                                Horror
+                            </option>
+                            <option value="sci-fi">
+                                Science Fiction
+                            </option>
+                            <option value="romantic comedies">
+                                Romantic Comedies
+                            </option>
+                            <option value="action">
+                                Action
+                            </option>
+                        </select> 
+                    </div>
                 </div>
                 <button type="submit" className="self-end w-fit px-4 py-2 border border-neutral-800 rounded-md shadow-sm text-sm font-bold text-neutral-800 hover:bg-neutral-800 hover:text-neutral-100">Get the message</button>
             </form>
