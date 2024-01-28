@@ -60,11 +60,11 @@ export default function CalendarAddEventPopover(){
                         <form action={uploadCalendarEvent} className='flex flex-col gap-3'>
                             <div className='flex flex-col gap-1'>
                                 <label htmlFor='calendar-event-name' className='text-sm font-normal text-neutral-800'>Event name</label>
-                                <input required type='text' id='calendar-event-name' name='calendar-event-name' className='w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black' />
+                                <input required type='text' autoComplete='off' id='calendar-event-name' name='calendar-event-name' className='w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black' />
                             </div>
                             <div className='flex flex-col gap-1'>
                                 <label htmlFor='calendar-event-description' className='text-sm font-normal text-neutral-800'>Event description</label>
-                                <input required type='text' id='calendar-event-description' name='calendar-event-description' className='w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black' />
+                                <input required type='text' autoComplete='off' id='calendar-event-description' name='calendar-event-description' className='w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black' />
                             </div>
                             <div className='flex flex-col gap-3'>
                                 <div className='flex flex-col gap-1'>
