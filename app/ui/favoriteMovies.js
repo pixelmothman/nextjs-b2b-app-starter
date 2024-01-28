@@ -9,7 +9,7 @@ export default async function FavoriteMovies(){
             Favorite movies
             </h2>
             <p className="text-neutral-800 mb-4">
-            Simulating fetching from a database.
+            Fetches the favorite movies that were uploaded using the form.
             </p>
             <div className="flex flex-row gap-4 flex-wrap">
             {
