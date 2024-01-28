@@ -91,7 +91,7 @@ export default async function CalendarTable({
             {
                 arrayOfDays.map((day, index) => {
                     return (
-                        <div key={index} className={`w-full h-full flex flex-col p-2 rounded-md ${
+                        <div key={index} className={`w-full h-full flex flex-col p-2 rounded-md overflow-y-auto ${
                             day.day === "" ? "outline outline-1 outline-neutral-300 shadow-sm" : 
                             day.year === Number(searchParams.day.split("-")[0]) && 
                             day.month === Number(searchParams.day.split("-")[1]) && 
