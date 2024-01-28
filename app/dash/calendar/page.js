@@ -1,3 +1,4 @@
+import CalendarAddEventPopover from "@/app/ui/calendarAddEventPopover";
 import CalendarCycleBtns from "@/app/ui/calendarCycleBtns";
 import CalendarMonthAndYear from "@/app/ui/calendarMonthAndYear";
 import CalendarTable from "@/app/ui/calendarTable";
@@ -19,9 +20,12 @@ export default async function Calendar({searchParams}){
                 <Suspense fallback={<div>Loading...</div>}>
                     <CalendarMonthAndYear/>
                 </Suspense>
-                <Suspense fallback={<div>Loading...</div>}>
-                    <CalendarCycleBtns/>
-                </Suspense>
+                <div className="w-fit flex flex-row gap-2">
+                    <CalendarAddEventPopover searchParams={searchParams}/>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <CalendarCycleBtns/>
+                    </Suspense>
+                </div>
             </div>
             <Suspense fallback={<div>Loading...</div>}>
                 <CalendarTable searchParams={searchParams}/>
