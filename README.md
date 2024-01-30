@@ -81,15 +81,16 @@ Create a new database with the following tables (for the example):
 
     create table
     public.calendar_events_table (
-        event_it uuid not null default gen_random_uuid (),
+        event_id uuid not null default gen_random_uuid (),
         cal_event_name text not null,
         cal_event_description text not null,
-        cal_event_start_date timestamp without time zone not null,
-        cal_event_end_date timestamp without time zone not null,
+        cal_event_start_date timestamp with time zone not null,
+        cal_event_end_date timestamp with time zone not null,
         created_at timestamp with time zone not null default now(),
         org_id uuid not null,
         user_id uuid not null,
-        constraint calendar_table_pkey primary key (event_it),
+        cal_event_label text not null,
+        constraint calendar_table_pkey primary key (event_id),
         constraint calendar_events_table_org_id_fkey foreign key (org_id) references org_table (org_id) on update cascade on delete cascade,
         constraint calendar_events_table_user_id_fkey foreign key (user_id) references user_table (user_id) on update cascade
     ) tablespace pg_default;
