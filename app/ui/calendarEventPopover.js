@@ -2,8 +2,8 @@
 
 import * as Popover from '@radix-ui/react-popover';
 import { useEffect, useState } from 'react';
-import CalendarEventBtn from './calendarEventBtn';
 import { updateCalendarEvent } from '@/lib/actions';
+import FormButtonAbstraction from './formButtonAbstraction';
 
 export default function CalendarEventPopover( { event }){
 
@@ -256,7 +256,7 @@ export default function CalendarEventPopover( { event }){
                                 </div>
                             </div>
                             {
-                                readOnlyState === false && <CalendarEventBtn btnText="Update" />
+                                readOnlyState === false && <FormButtonAbstraction loadingText="Updating..." buttonText="Update"/>
                             }
                         </form>
                     </div>

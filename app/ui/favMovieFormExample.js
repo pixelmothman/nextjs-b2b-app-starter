@@ -1,6 +1,7 @@
 'use client'
 
 import { uploadFavMovie } from "@/lib/actions"
+import FormButtonAbstraction from "./formButtonAbstraction"
 
 export default function FavMovieFormExample(){
 
@@ -19,7 +20,7 @@ export default function FavMovieFormExample(){
                     </label>
                     <input autoComplete="off" type="text" id="movie-example" name="movie-example" className="w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black"/>
                 </div>
-                <button type="submit" className="self-end w-fit px-4 py-2 border border-neutral-800 rounded-md shadow-sm text-sm font-bold text-neutral-800 hover:bg-neutral-800 hover:text-neutral-100  focus-visible:outline-0 focus-visible:ring-1 focus-visible:ring-black">Upload</button>
+                <FormButtonAbstraction loadingText="Uploading..." buttonText="Upload" />
             </form>
         </div>
     )

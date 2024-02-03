@@ -7,6 +7,7 @@ import {useDropzone} from 'react-dropzone';
 import { createClient } from '@supabase/supabase-js';
 import UploadImgBtn from './uploadImgBtn';
 import toast, { Toaster } from 'react-hot-toast';
+import FormButtonAbstraction from './formButtonAbstraction';
 
 const baseStyle = {
     flex: 1,
@@ -201,7 +202,7 @@ export default function StyledDropzone(props) {
               files[1]?.path.split('.').pop()
             } id="image-type-two" name="image-type-two" className="form-input w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800 outline-0 ring-0 border-0 focus-visible:ring-black"/>
         </div>
-        <UploadImgBtn />
+        <FormButtonAbstraction loadingText="Uploading..." buttonText="Upload" />
       </form>
       {
         formState?.success === false && (

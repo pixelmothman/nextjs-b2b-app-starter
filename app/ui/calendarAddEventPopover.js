@@ -2,8 +2,8 @@
 
 import * as Popover from '@radix-ui/react-popover';
 import { useEffect, useState } from 'react';
-import CalendarEventBtn from './calendarEventBtn';
 import { uploadCalendarEvent } from '@/lib/actions';
+import FormButtonAbstraction from './formButtonAbstraction';
 
 export default function CalendarAddEventPopover(){
     
@@ -169,7 +169,7 @@ export default function CalendarAddEventPopover(){
                                     />
                                 </div>
                             </div>
-                            <CalendarEventBtn/>
+                            <FormButtonAbstraction loadingText="Uploading..." buttonText="Add event" />
                         </form>
                     </div>
                 </Popover.Content>
