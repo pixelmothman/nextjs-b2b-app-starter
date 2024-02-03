@@ -1,4 +1,6 @@
 import { fetchFavoriteMovies } from "@/lib/data";
+import FormButtonAbstraction from "./formButtonAbstraction";
+import { deleteFavoriteMovie } from "@/lib/actions";
 
 export default async function FavoriteMovies(){
     const favMovies = await fetchFavoriteMovies();
@@ -16,10 +18,14 @@ export default async function FavoriteMovies(){
                 favMovies !== null && favMovies.length !== 0 ? (
                     favMovies.map((movie, index) => {
                         return (
-                            <div key={movie + index} className="w-fit h-fit px-4 py-2 bg-neutral-100 rounded-md shadow-sm border border-neutral-800 cursor-default hover:outline hover:outline-neutral-300">
+                            <div key={movie.movieName + index} className="group w-fit h-fit px-4 py-2 flex flex-row items-center justify-between gap-2 bg-neutral-100 rounded-md shadow-sm border border-neutral-800 cursor-default hover:outline hover:outline-neutral-300">
                                 <span className="text-sm font-semibold text-neutral-800">
-                                    {movie}
+                                    {movie.movieName}
                                 </span>
+                                <form action={deleteFavoriteMovie} className="flex items-center">
+                                    <input type="hidden" value={movie.movieId} name="movie-id" />
+                                    <FormButtonAbstraction loadingText="..." buttonIcon="delete" background={false} />
+                                </form>
                             </div>
                         )
                     })
