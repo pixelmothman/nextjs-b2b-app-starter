@@ -5,7 +5,6 @@ import React, {useEffect, useState, useMemo} from 'react';
 import { useFormState } from 'react-dom'
 import {useDropzone} from 'react-dropzone';
 import { createClient } from '@supabase/supabase-js';
-import UploadImgBtn from './uploadImgBtn';
 import toast, { Toaster } from 'react-hot-toast';
 import FormButtonAbstraction from './formButtonAbstraction';
 
