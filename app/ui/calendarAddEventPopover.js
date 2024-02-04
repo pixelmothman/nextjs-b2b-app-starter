@@ -80,7 +80,7 @@ export default function CalendarAddEventPopover(){
                                     sideOffset={17}
                                     >
                                         <div 
-                                        aria-label='select-label-btn-2'
+                                        aria-label='select-label-btn-1'
                                         className="relative flex flex-row gap-2 items-center justify-between text-xs font-semibold text-black select-none outline-none rounded-lg cursor-pointer"
                                         >
                                             Organization
@@ -91,7 +91,7 @@ export default function CalendarAddEventPopover(){
                                             </button>
                                         </div>
                                         <div 
-                                        aria-label='select-label-btn-1'
+                                        aria-label='select-label-btn-2'
                                         className="relative flex flex-row gap-2 items-center justify-between text-xs font-semibold text-black select-none outline-none rounded-lg cursor-pointer"
                                         >
                                             Personal
