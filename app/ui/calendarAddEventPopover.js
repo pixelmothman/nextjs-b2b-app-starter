@@ -83,26 +83,15 @@ export default function CalendarAddEventPopover(){
                                         aria-label='select-label-btn-2'
                                         className="relative flex flex-row gap-2 items-center justify-between text-xs font-semibold text-black select-none outline-none rounded-lg cursor-pointer"
                                         >
-                                            Education
+                                            Organization
                                             <button onClick={() => {
-                                                setEventLabel('education');
-                                            }} className={`flex items-center justify-center w-6 h-6 fill-neutral-700 border border-neutral-500 rounded-md focus:bg-neutral-800 focus:fill-white focus:outline-0 ${eventLabel === 'education' ? 'bg-neutral-600 fill-white' : ''}`}>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256"><path d="M227.79,52.62l-96-32a11.85,11.85,0,0,0-7.58,0l-96,32A12,12,0,0,0,20,63.37,6.05,6.05,0,0,0,20,64v80a12,12,0,0,0,24,0V80.65l23.71,7.9a67.92,67.92,0,0,0,18.42,85A100.36,100.36,0,0,0,46,209.44a12,12,0,1,0,20.1,13.11C80.37,200.59,103,188,128,188s47.63,12.59,61.95,34.55a12,12,0,1,0,20.1-13.11,100.36,100.36,0,0,0-40.18-35.92,67.92,67.92,0,0,0,18.42-85l39.5-13.17a12,12,0,0,0,0-22.76Zm-99.79-8L186.05,64,128,83.35,70,64ZM172,120A44,44,0,1,1,90.94,96.29l33.27,11.09a11.89,11.89,0,0,0,7.58,0l33.27-11.09A43.85,43.85,0,0,1,172,120Z"></path></svg>
+                                                setEventLabel('organization');
+                                            }} className={`flex items-center justify-center w-6 h-6 fill-neutral-700 border border-neutral-500 rounded-md focus:bg-neutral-800 focus:fill-white focus:outline-0 ${eventLabel === 'organization' ? 'bg-neutral-600 fill-white' : ''}`}>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256"><path d="M221.56,100.85,141.61,25.38l-.16-.15a19.93,19.93,0,0,0-26.91,0l-.17.15L34.44,100.85A20.07,20.07,0,0,0,28,115.55V208a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V115.55A20.07,20.07,0,0,0,221.56,100.85ZM204,204H52V117.28l76-71.75,76,71.75Z"></path></svg>
                                             </button>
                                         </div>
                                         <div 
                                         aria-label='select-label-btn-1'
-                                        className="relative flex flex-row gap-2 items-center justify-between text-xs font-semibold text-black select-none outline-none rounded-lg cursor-pointer"
-                                        >
-                                            Work
-                                            <button onClick={() => {
-                                                setEventLabel('work');
-                                            }} className={`flex items-center justify-center w-6 h-6 fill-neutral-700 border border-neutral-500 rounded-md focus:bg-neutral-800 focus:fill-white focus:outline-0 ${eventLabel === 'work' ? 'bg-neutral-600 fill-white' : ''}`}>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256"><path d="M232,116H219.22A91.1,91.1,0,0,0,213,92.79l11.08-6.4a12,12,0,1,0-12-20.78L201,72a92.85,92.85,0,0,0-17-17l6.41-11.11a12,12,0,1,0-20.78-12L163.21,43A91.1,91.1,0,0,0,140,36.78V24a12,12,0,0,0-24,0V36.78A91.1,91.1,0,0,0,92.79,43l-6.4-11.08a12,12,0,0,0-20.78,12L72,55A92.85,92.85,0,0,0,55,72L43.93,65.61a12,12,0,0,0-12,20.78L43,92.79A91.1,91.1,0,0,0,36.78,116H24a12,12,0,0,0,0,24H36.78A91.1,91.1,0,0,0,43,163.21l-11.08,6.4a12,12,0,1,0,12,20.78L55,184a92.85,92.85,0,0,0,17,17l-6.41,11.11a12,12,0,1,0,20.78,12L92.79,213A91.1,91.1,0,0,0,116,219.22V232a12,12,0,0,0,24,0V219.22A91.1,91.1,0,0,0,163.21,213l6.4,11.08a12,12,0,0,0,20.78-12L184,201a92.85,92.85,0,0,0,17-17l11.11,6.41a12,12,0,1,0,12-20.78L213,163.21A91.1,91.1,0,0,0,219.22,140H232a12,12,0,0,0,0-24ZM128,60a68.1,68.1,0,0,1,66.92,56h-60l-30-52A67.61,67.61,0,0,1,128,60ZM60,128A67.9,67.9,0,0,1,84.16,76.07l30,51.93-30,51.93A67.9,67.9,0,0,1,60,128Zm68,68a67.61,67.61,0,0,1-23.07-4l30-52h60A68.1,68.1,0,0,1,128,196Z"></path></svg>
-                                            </button>
-                                        </div>
-                                        <div 
-                                        aria-label='select-label-btn-3'
                                         className="relative flex flex-row gap-2 items-center justify-between text-xs font-semibold text-black select-none outline-none rounded-lg cursor-pointer"
                                         >
                                             Personal
@@ -110,17 +99,6 @@ export default function CalendarAddEventPopover(){
                                                 setEventLabel('personal');
                                             }} className={`flex items-center justify-center w-6 h-6 fill-neutral-700 border border-neutral-500 rounded-md focus:bg-neutral-800 focus:fill-white focus:outline-0 ${eventLabel === 'personal' ? 'bg-neutral-600 fill-white' : ''}`}>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256"><path d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20ZM79.57,196.57a60,60,0,0,1,96.86,0,83.72,83.72,0,0,1-96.86,0ZM100,120a28,28,0,1,1,28,28A28,28,0,0,1,100,120ZM194,179.94a83.48,83.48,0,0,0-29-23.42,52,52,0,1,0-74,0,83.48,83.48,0,0,0-29,23.42,84,84,0,1,1,131.9,0Z"></path></svg>
-                                            </button>
-                                        </div>
-                                        <div 
-                                        aria-label='select-label-btn-4'
-                                        className="relative flex flex-row gap-2 items-center justify-between text-xs font-semibold text-black select-none outline-none rounded-lg cursor-pointer"
-                                        >
-                                            Chores
-                                            <button onClick={() => {
-                                                setEventLabel('chores');
-                                            }} className={`flex items-center justify-center w-6 h-6 fill-neutral-700 border border-neutral-500 rounded-md focus:bg-neutral-800 focus:fill-white focus:outline-0 ${eventLabel === 'chores' ? 'bg-neutral-600 fill-white' : ''}`}>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 256 256"><path d="M237.24,213.21C216.12,203,204,180.64,204,152V134.73a19.94,19.94,0,0,0-12.62-18.59l-24.86-9.81a4,4,0,0,1-2.26-5.14l21.33-53A32,32,0,0,0,167.17,6,32.13,32.13,0,0,0,126.25,24.2l-.07.18-21,53.09a3.94,3.94,0,0,1-2.14,2.2,3.89,3.89,0,0,1-3,.06L74.6,69.43A19.89,19.89,0,0,0,52.87,74C31.06,96.43,20,122.68,20,152a115.46,115.46,0,0,0,32.29,80.3A12,12,0,0,0,61,236H232a12,12,0,0,0,5.24-22.79ZM68.19,92.73,91.06,102A28,28,0,0,0,127.5,86.31l20.95-53a8.32,8.32,0,0,1,10.33-4.81,8,8,0,0,1,4.61,10.57,1.17,1.17,0,0,0,0,.11L142,92.29a28.05,28.05,0,0,0,15.68,36.33L180,137.45V152c0,1,0,2.07.05,3.1l-122.44-49A101.91,101.91,0,0,1,68.19,92.73ZM116.74,212a83.73,83.73,0,0,1-22.09-39,12,12,0,0,0-23.25,6,110.27,110.27,0,0,0,14.49,33H66.25A91.53,91.53,0,0,1,44,152a84,84,0,0,1,3.41-24.11l136.67,54.66A86.58,86.58,0,0,0,198.66,212Z"></path></svg>
                                             </button>
                                         </div>
                                     </Popover.Content>
