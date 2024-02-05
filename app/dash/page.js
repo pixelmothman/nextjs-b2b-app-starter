@@ -1,8 +1,9 @@
 import { Suspense } from "react"
 import { MultipleRectSkeleton } from "../ui/skeletons"
-import FavoriteMovies from "../ui/favoriteMovies"
+import FavoritePersonalMovies from "../ui/favoritePersonalMovies"
 import FormExample from "../ui/formExample"
 import FavMovieFormExample from "../ui/favMovieFormExample"
+import FavoriteOrgMovies from "../ui/favoriteOrgMovies"
 
 export default async function Home() {
 
@@ -10,9 +11,12 @@ export default async function Home() {
         <div className="w-full h-full grid grid-cols-2 gap-4">
             <FavMovieFormExample/>
             <Suspense fallback={<MultipleRectSkeleton/>}>
-                <FavoriteMovies/>
+                <FavoritePersonalMovies/>
             </Suspense>
             <FormExample/>
+            <Suspense fallback={<MultipleRectSkeleton/>}>
+                <FavoriteOrgMovies/>
+            </Suspense>
         </div>
     )
 };
