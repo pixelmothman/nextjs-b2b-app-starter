@@ -16,9 +16,20 @@ export default function FavMovieFormExample(){
             <form action={uploadFavMovie} className="h-full flex flex-col gap-4 justify-between">
                 <div className="flex flex-col gap-2">
                     <label htmlFor="movie-example" className="font-bold text-sm text-neutral-800">
-                    Movie
+                    Favorite movie
                     </label>
-                    <input autoComplete="off" type="text" id="movie-example" name="movie-example" className="w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black"/>
+                    <input required autoComplete="off" type="text" id="movie-example" name="movie-example" className="w-full h-8 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black"/>
+                    <label htmlFor="movie-view-category-example" className="font-bold text-sm text-neutral-800">
+                    View category
+                    </label>
+                    <select required id="movie-view-category-example" name="movie-view-category-example" className="w-full h-10 px-2 border border-neutral-800 rounded-md shadow-sm text-sm font-normal text-neutral-800 focus-visible:border-0 focus-visible:ring-2 focus-visible:ring-black">
+                        <option value="personal">
+                            Personal
+                        </option>
+                        <option value="org">
+                            Organization
+                        </option>
+                    </select> 
                 </div>
                 <FormButtonAbstraction loadingText="Uploading..." buttonText="Upload" />
             </form>
