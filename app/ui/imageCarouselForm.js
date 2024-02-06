@@ -4,7 +4,7 @@ import { useFormState } from 'react-dom'
 import { useFormStatus } from 'react-dom'
 import { getSingedURLS } from "@/lib/actions"
 import { useEffect, useState } from 'react';
-import ImageCarouselBtn from './imageCarouselBtn';
+import FormButtonAbstraction from './formButtonAbstraction';
 
 export default function ImageCarouselForm({imageListCounter, offset, onOffsetChange, images, onImagesChange}){
     //for the form
@@ -26,14 +26,14 @@ export default function ImageCarouselForm({imageListCounter, offset, onOffsetCha
     }, [formState]);
 
     return (
-        <div className="w-fit h-full flex flex-row gap-1">
+        <div className="group w-fit h-full flex flex-row gap-1">
             {
                 imageListCounter > 4 && offset !== imageListCounter ? (
                     <form action={formAction} disabled={pending} className="flex flex-col gap-4">
                         <input autoComplete="off" type="hidden" value={
                             offset
                         } id="off-img-number" name="off-img-number" className="form-input w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800 outline-0 ring-0 border-0 focus-visible:ring-black"/>
-                        <ImageCarouselBtn/>
+                        <FormButtonAbstraction loadingText="..." buttonText="Load more"/>
                     </form>
                ) : null
             }
