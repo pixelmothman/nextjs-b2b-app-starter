@@ -106,7 +106,7 @@ export default async function CalendarTable({
                                 {
                                     day?.events.map((event, index) => {
                                         return (
-                                            <CalendarEventPopover key={index} event={event}/>
+                                            <CalendarEventPopover key={index} event={event} dayName={day.name} dayNumber={day.day}/>
                                         )
                                     })
                                 }
