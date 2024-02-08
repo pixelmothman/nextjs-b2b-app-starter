@@ -2,7 +2,7 @@
 
 import * as Popover from '@radix-ui/react-popover';
 import { useEffect, useState } from 'react';
-import { updateCalendarEvent } from '@/lib/actions';
+import { deleteCalendarEvent, updateCalendarEvent } from '@/lib/actions';
 import FormButtonAbstraction from './formButtonAbstraction';
 
 export default function CalendarEventPopover( { event, dayName, dayNumber }){
@@ -240,6 +240,14 @@ export default function CalendarEventPopover( { event, dayName, dayNumber }){
                                 }
                             </div>
                         </form>
+                        {
+                            readOnlyState === false ? (
+                                <form action={deleteCalendarEvent} className='absolute bottom-4 right-28'>
+                                    <input autoComplete="off" required type='hidden' id='calendar-event-id' name='calendar-event-id' value={eventId} />
+                                    <FormButtonAbstraction loadingText="Deleting..." buttonText="Delete"/>
+                                </form>
+                            ) : null
+                        }
                     </div>
                 </Popover.Content>
             </Popover.Portal>
