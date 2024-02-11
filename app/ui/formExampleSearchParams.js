@@ -3,7 +3,7 @@
 import { createExampleMessage } from "@/lib/actions"
 import FormButtonAbstraction from "./formButtonAbstraction"
 
-export default function FormExample(){
+export default function formExampleSearchParams(){
 
     return (
         <div className="w-full h-full flex flex-col p-5 rounded-sm bg-white border border-neutral-800 shadow-sm overflow-y-auto">
