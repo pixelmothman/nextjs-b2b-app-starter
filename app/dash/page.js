@@ -1,7 +1,7 @@
 import { Suspense } from "react"
 import { MultipleRectSkeleton } from "../ui/skeletons"
 import FavoritePersonalMovies from "../ui/favoritePersonalMovies"
-import FormExample from "../ui/formExample"
+import FormExampleSearchParams from "../ui/formExampleSearchParams"
 import FavMovieFormExample from "../ui/favMovieFormExample"
 import FavoriteOrgMovies from "../ui/favoriteOrgMovies"
 
@@ -13,7 +13,7 @@ export default async function Home() {
             <Suspense fallback={<MultipleRectSkeleton/>}>
                 <FavoritePersonalMovies/>
             </Suspense>
-            <FormExample/>
+            <FormExampleSearchParams/>
             <Suspense fallback={<MultipleRectSkeleton/>}>
                 <FavoriteOrgMovies/>
             </Suspense>
