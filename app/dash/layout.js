@@ -1,7 +1,7 @@
 import { getUserOrRedirect } from "@propelauth/nextjs/server/app-router";
 import Link from "next/link";
-import MainMenuDropDown from "../ui/mainMenuDropDown";
-import LeftSideBar from "../ui/leftSideBar";
+import MainMenuDropDown from "../ui/menus/mainMenuDropDown";
+import LeftSideBar from "../ui/menus/leftSideBar";
 
 export default async function DashLayout( { children }) {
     const user = await getUserOrRedirect()

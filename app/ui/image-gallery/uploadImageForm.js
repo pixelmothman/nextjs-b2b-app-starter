@@ -6,7 +6,7 @@ import { useFormState } from 'react-dom'
 import {useDropzone} from 'react-dropzone';
 import { createClient } from '@supabase/supabase-js';
 import toast, { Toaster } from 'react-hot-toast';
-import FormButtonAbstraction from './formButtonAbstraction';
+import FormButtonAbstraction from '../miscelaneous/formButtonAbstraction';
 
 const baseStyle = {
     flex: 1,

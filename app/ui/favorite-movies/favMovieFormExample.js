@@ -1,7 +1,7 @@
 'use client'
 
 import { uploadFavMovie } from "@/lib/actions"
-import FormButtonAbstraction from "./formButtonAbstraction"
+import FormButtonAbstraction from "../miscelaneous/formButtonAbstraction"
 
 export default function FavMovieFormExample(){
 

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import loginImage from '@/public/login_illustration.jpeg'
-import SignupAndLoginButtons from './ui/logInBtns'
+import SignupAndLoginButtons from './ui/login/logInBtns'
 
 export default async function Home() {
     

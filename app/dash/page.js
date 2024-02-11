@@ -1,9 +1,9 @@
 import { Suspense } from "react"
-import { MultipleRectSkeleton } from "../ui/skeletons"
-import FavoritePersonalMovies from "../ui/favoritePersonalMovies"
-import FormExampleSearchParams from "../ui/formExampleSearchParams"
-import FavMovieFormExample from "../ui/favMovieFormExample"
-import FavoriteOrgMovies from "../ui/favoriteOrgMovies"
+import { MultipleRectSkeleton } from "../ui/loading/skeletons"
+import FavoritePersonalMovies from "../ui/favorite-movies/favoritePersonalMovies"
+import FormExampleSearchParams from "../ui/create-message-form/formExampleSearchParams"
+import FavMovieFormExample from "../ui/favorite-movies/favMovieFormExample"
+import FavoriteOrgMovies from "../ui/favorite-movies/favoriteOrgMovies"
 
 export default async function Home() {
 

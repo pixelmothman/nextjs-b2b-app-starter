@@ -1,6 +1,6 @@
-import ImageGallery from "@/app/ui/imgGallery";
-import StyledDropzone from "@/app/ui/uploadImageForm";
-import StyledDropzoneMultipleImages from "@/app/ui/uploadImagesForm";
+import ImageGallery from "@/app/ui/image-gallery/imgGallery";
+import StyledDropzone from "@/app/ui/image-gallery/uploadImageForm";
+import StyledDropzoneMultipleImages from "@/app/ui/image-gallery/uploadImagesForm";
 
 export default async function ImagesPage(){
 

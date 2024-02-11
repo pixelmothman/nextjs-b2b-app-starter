@@ -4,7 +4,7 @@ import { useFormState } from 'react-dom'
 import { useFormStatus } from 'react-dom'
 import { getSingedURLS } from "@/lib/actions"
 import { useEffect, useState } from 'react';
-import FormButtonAbstraction from './formButtonAbstraction';
+import FormButtonAbstraction from '../miscelaneous/formButtonAbstraction';
 
 export default function ImageCarouselForm({imageListCounter, offset, onOffsetChange, images, onImagesChange}){
     //for the form

@@ -1,7 +1,7 @@
-import CalendarAddEventPopover from "@/app/ui/calendarAddEventPopover";
-import CalendarCycleBtns from "@/app/ui/calendarCycleBtns";
-import CalendarMonthAndYear from "@/app/ui/calendarMonthAndYear";
-import CalendarTable from "@/app/ui/calendarTable";
+import CalendarAddEventPopover from "@/app/ui/calendar/calendarAddEventPopover";
+import CalendarCycleBtns from "@/app/ui/calendar/calendarCycleBtns";
+import CalendarMonthAndYear from "@/app/ui/calendar/calendarMonthAndYear";
+import CalendarTable from "@/app/ui/calendar/calendarTable";
 import { Suspense } from "react";
 
 
