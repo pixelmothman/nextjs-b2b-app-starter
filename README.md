@@ -1,6 +1,6 @@
 # B2B Next.js Starter Template
 
-This template provides a starting point for building B2B web applications using Next.js, Zod for schema validation, TailwindCSS for styling, PropelAuth for authentication, and Supabase for backend storage.
+This template provides a starting point for building B2B web applications using Next.js, Zod for schema validation, TailwindCSS for styling, Radix for some UI components, PropelAuth for authentication, and Supabase for database and storage.
 
 ## Features
 
