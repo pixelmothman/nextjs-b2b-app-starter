@@ -10,17 +10,17 @@ export default function LeftSideBarItem( props ){
 
     const arrayOfIcons = [
         {
-            name: "Page 1",
+            name: "Main Page",
             icon: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path d="M216,36H40A20,20,0,0,0,20,56V200a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V56A20,20,0,0,0,216,36Zm-4,24V92H44V60ZM44,116H92v80H44Zm72,80V116h96v80Z"></path></svg>,
             link: `/dash`
         },
         {
-            name: "Page 2",
+            name: "Image Gallery",
             icon: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path d="M216,36H80A20,20,0,0,0,60,56V68H40A20,20,0,0,0,20,88V200a20,20,0,0,0,20,20H184a20,20,0,0,0,20-20V180h12a20,20,0,0,0,20-20V56A20,20,0,0,0,216,36ZM84,60H212v45.09l-3.23-3.23a20,20,0,0,0-28.28,0L165.31,117,130.14,81.86a20,20,0,0,0-28.28,0L84,99.72Zm96,136H44V92H60v68a20,20,0,0,0,20,20H180ZM84,156V133.66l32-32,40.83,40.83a12,12,0,0,0,17,0l20.83-20.83L212,139v17Z"></path></svg>,
             link: `/dash/image-gallery`
         },
         {
-            name: "Page 3",
+            name: "Calendar",
             icon: <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path d="M208,28H188V24a12,12,0,0,0-24,0v4H92V24a12,12,0,0,0-24,0v4H48A20,20,0,0,0,28,48V208a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V48A20,20,0,0,0,208,28ZM68,52a12,12,0,0,0,24,0h72a12,12,0,0,0,24,0h16V76H52V52ZM52,204V100H204V204Z"></path></svg>,
             link: `/dash/calendar?year=${new Date().getFullYear()}&month=${new Date().getMonth() + 1}&day=${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`
         }
