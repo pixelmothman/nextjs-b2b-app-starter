@@ -6,7 +6,7 @@ import NotForMobileScreen from './ui/miscelaneous/notForMobileScreen';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'NextJs Starter',
+  title: 'NextJS App Starter',
   description: 'Start fast.',
 }
 
