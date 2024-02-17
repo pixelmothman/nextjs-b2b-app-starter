@@ -12,7 +12,7 @@ export default async function DashLayout( { children }) {
                 <div className="w-full h-fit flex flex-row justify-between items-center ring-1 ring-neutral-800">
                     <div className="w-fit flex items-center justify-center py-[18px] px-4 ring-1 ring-neutral-800">
                         <Link href="/dash" className="font-black text-xl text-neutral-900">
-                            NextJS App Starter
+                        pixelmothman/nextjs-b2b-app-starter
                         </Link>
                     </div>
                     <div className="pr-4">
