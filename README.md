@@ -3,7 +3,7 @@
 
 # ⚡️ pixelmothman/nextjs-b2b-app-starter
 
-This template provides a starting point for building B2B web applications using Next.js, Zod for schema validation, TailwindCSS for styling, Radix for some UI components, PropelAuth for authentication, and Supabase for database and storage.
+This template provides a starting point for building B2B web applications using Next.js, Supabase for database and storage, PropelAuth for authentication, Zod for schema validation, TailwindCSS for styling, Radix-ui for some UI components, React Hot Toast for smoking hot React notifications, and React Dropzone for a simple React hook to create a HTML5-compliant drag'n'drop zone for files.
 
 ## Powered by
 
@@ -12,8 +12,9 @@ This template provides a starting point for building B2B web applications using 
 - 🟢 **PropelAuth**: provides end-to-end managed user authentication specializing in B2B use cases.
 - ✨ **Zod**: TypeScript-first schema validation with static type inference.
 - 🧪 **TailwindCSS**: a utility-first CSS framework packed with classes that can be composed to build any design, directly in the markup.
+- 🏗️ **Radix-ui Primitives**: An open-source UI component library for building high-quality, accessible design systems and web apps.
 - 🔥 **React Hot Toast**: smoking hot React notifications.
-- 🚁 **React Dropzone**: simple React hook to create a HTML5-compliant drag'n'drop zone for files..
+- 🚁 **React Dropzone**: simple React hook to create a HTML5-compliant drag'n'drop zone for files.
 
 ## Getting Started
 
