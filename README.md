@@ -8,10 +8,12 @@ This template provides a starting point for building B2B web applications using 
 ## Powered by
 
 - ◽️ **Next.js**: a React framework for building full-stack web applications.
+- 💾 **Supabase**: an open source platform that allows users to build production-grade applications with a Postgres database, Authentication, instant APIs, Realtime, Functions, Storage, and Vector embeddings.
+- 🟢 **PropelAuth**: provides end-to-end managed user authentication specializing in B2B use cases.
 - ✨ **Zod**: TypeScript-first schema validation with static type inference.
 - 🧪 **TailwindCSS**: a utility-first CSS framework packed with classes that can be composed to build any design, directly in the markup.
-- 🟢 **PropelAuth**: provides end-to-end managed user authentication specializing in B2B use cases.
-- 💾 **Supabase**: an open source platform that allows users to build production-grade applications with a Postgres database, Authentication, instant APIs, Realtime, Functions, Storage, and Vector embeddings.
+- 🔥 **React Hot Toast**: smoking hot React notifications.
+- 🚁 **React Dropzone**: simple React hook to create a HTML5-compliant drag'n'drop zone for files..
 
 ## Getting Started
 
@@ -150,6 +152,5 @@ While in development mode, you can manually add users and organizations directly
 Configure webhooks in PropelAuth to integrate with SVIX for events related to organizations and users (creation, update, deletion). You'll need an "Endpoint URL" which is the URL from Vercel followed by the corresponding route.
 
 ## Disclaimer
-
 
 The instructions and guidelines provided in this document reflect the author's opinions and are offered for informational purposes only. Users should exercise their judgment in applying any practices described here. While this project is licensed under the MIT License, which includes its own disclaimers, please note that the author assumes no responsibility for outcomes resulting from the use of this software or its documentation.
