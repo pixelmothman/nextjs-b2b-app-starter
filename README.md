@@ -1,3 +1,6 @@
+
+![Image of login page of nextjs-b2b-app-starter](public/login-pixelmothman-nextjs-b2b-app-starter.png)
+
 # ⚡️ pixelmothman/nextjs-b2b-app-starter
 
 This template provides a starting point for building B2B web applications using Next.js, Zod for schema validation, TailwindCSS for styling, Radix for some UI components, PropelAuth for authentication, and Supabase for database and storage.
