@@ -5,7 +5,8 @@ import React, {useEffect, useState, useMemo} from 'react';
 import { useFormState } from 'react-dom'
 import {useDropzone} from 'react-dropzone';
 import { createClient } from '@supabase/supabase-js';
-import UploadImgBtn from './uploadImgBtn';
+import toast, { Toaster } from 'react-hot-toast';
+import FormButtonAbstraction from '../miscelaneous/formButtonAbstraction';
 
 const baseStyle = {
     flex: 1,
@@ -135,11 +136,32 @@ export default function StyledDropzone(props) {
   const uploadImage = async (p, t, fileToUpload) => {
     const { data, error } = await supabase.storage.from('images').uploadToSignedUrl(p, t, fileToUpload)
     if (error) {
-      throw error
-    }
-    if (data) {
-      alert('Image uploaded successfully!')
-    }
+      toast.custom((t) => {
+        return (
+          <div className='w-fit h-fit mb-2 mr-2 flex flex-row items-center justify-center gap-2 p-4 bg-neutral-50 border border-neutral-800 rounded-sm shadow-sm shadow-neutral-800'>
+            <div className='w-6 h-6 flex items-center justify-center bg-neutral-800 fill-neutral-50 rounded-md'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212ZM76,108a16,16,0,1,1,16,16A16,16,0,0,1,76,108Zm104,0a16,16,0,1,1-16-16A16,16,0,0,1,180,108Zm-3.26,57a12,12,0,0,1-19.48,14,36,36,0,0,0-58.52,0,12,12,0,0,1-19.48-14,60,60,0,0,1,97.48,0Z"></path></svg>
+            </div>
+            <p className='text-sm font-bold text-neutral-800'>
+            Image upload error
+            </p>
+          </div>
+        )
+      });
+    } else if (data) {
+      toast.custom((t) => {
+        return (
+          <div className='w-fit h-fit mb-2 mr-2 flex flex-row items-center justify-center gap-2 p-4 bg-neutral-50 border border-neutral-800 rounded-sm shadow-sm shadow-neutral-800'>
+            <div className='w-6 h-6 flex items-center justify-center bg-neutral-800 fill-neutral-50 rounded-md'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256"><path d="M178.39,158c-11,19.06-29.39,30-50.39,30s-39.36-10.93-50.39-30a12,12,0,0,1,20.78-12c3.89,6.73,12.91,18,29.61,18s25.72-11.28,29.61-18a12,12,0,1,1,20.78,12ZM236,128A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128ZM92,124a16,16,0,1,0-16-16A16,16,0,0,0,92,124Zm72-32a16,16,0,1,0,16,16A16,16,0,0,0,164,92Z"></path></svg>
+            </div>
+            <p className='text-sm font-bold text-neutral-800'>
+            Image uploaded successfully!
+            </p>
+          </div>
+        )
+      });
+    };
   };
 
 
@@ -169,7 +191,7 @@ export default function StyledDropzone(props) {
                 files[0]?.path.split('.').pop()
               } id="image-type" name="image-type" className="form-input w-full h-10 px-4 py-2 rounded-md bg-neutral-100 text-neutral-800 outline-0 ring-0 border-0 focus-visible:ring-black"/>
           </div>
-          <UploadImgBtn />
+          <FormButtonAbstraction loadingText="Uploading..." buttonText="Upload" />
         </form>
         {
           formState?.success === false && (
@@ -178,6 +200,13 @@ export default function StyledDropzone(props) {
             </p>
           )
         }
+        <Toaster
+            position='bottom-right'
+            reverseOrder={false}
+            toastOptions={{
+                duration: 3000,
+            }}
+        />
     </div>
   );
 }

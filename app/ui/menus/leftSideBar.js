@@ -5,9 +5,9 @@ import LeftSideBarItem from "./leftSideBarItem";
 export default function LeftSideBar() {
     
     const LeftSideBarItems = [
-        "Page 1",
-        "Page 2",
-        "Page 3",
+        "Main Page",
+        "Image Gallery",
+        "Calendar",
     ];
 
     return (
