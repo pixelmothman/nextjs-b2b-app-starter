@@ -1,6 +1,7 @@
 'use client'
 
 import * as Popover from '@radix-ui/react-popover';
+import Link from 'next/link';
 
 export default function DeleteOrgAlert({userWhoTriggeredOrgDeleteEmail}){
     return (
@@ -37,6 +38,9 @@ export default function DeleteOrgAlert({userWhoTriggeredOrgDeleteEmail}){
                                 </span>
                             </div>
                         </div>
+                        <Link href='/dash/delete-organization' className='w-full h-8 flex items-center justify-center bg-blue-500 rounded-md text-xs text-neutral-100 font-semibold cursor-pointer hover:bg-blue-600'>
+                        Prevent delete
+                        </Link>
                     </div>
                 </Popover.Content>
             </Popover.Portal>
