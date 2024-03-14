@@ -13,7 +13,7 @@ export default async function DeleteOrganization(){
                     Delete Organization
                     </h2>
                     {
-                        isOrgInDeleteQueue.length === 0 ? (
+                        isOrgInDeleteQueue.isOrgInDeleteQueue === false ? (
                             <p className="text-neutral-200 mb-4">
                             If you click the delete org button, the organization will be deleted tonight at midnight.
                             </p>
@@ -25,7 +25,7 @@ export default async function DeleteOrganization(){
                     }
                 </div>
                 {
-                    isOrgInDeleteQueue.length === 0 ? (
+                    isOrgInDeleteQueue.isOrgInDeleteQueue === false ? (
                         <DeleteOrgExample/>
                     ) : (
                         <CancelDeleteOrgBtn/>

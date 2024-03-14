@@ -20,7 +20,7 @@ export default async function DashLayout( { children }) {
                     </div>
                     <div className="w-fit h-fit flex flex-row gap-2 pr-4">
                         {
-                            isOrgInDeleteQueue.length !== 0 ? (<DeleteOrgAlert userWhoTriggeredOrgDeleteEmail={isOrgInDeleteQueue.userWhoTriggeredOrgDeleteEmail}/>) : null
+                            isOrgInDeleteQueue.isOrgInDeleteQueue === true ? (<DeleteOrgAlert userWhoTriggeredOrgDeleteEmail={isOrgInDeleteQueue.userWhoTriggeredOrgDeleteEmail}/>) : null
                         }
                         <MainMenuDropDown/>
                     </div>
