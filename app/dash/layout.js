@@ -2,9 +2,12 @@ import { getUserOrRedirect } from "@propelauth/nextjs/server/app-router";
 import Link from "next/link";
 import MainMenuDropDown from "../ui/menus/mainMenuDropDown";
 import LeftSideBar from "../ui/menus/leftSideBar";
+import DeleteOrgAlert from "../ui/delete-org/deleteOrgAlert";
+import { getIsOrgInDeleteQueue } from "@/lib/data";
 
 export default async function DashLayout( { children }) {
-    const user = await getUserOrRedirect()
+    const user = await getUserOrRedirect();
+    const isOrgInDeleteQueue = await getIsOrgInDeleteQueue();
 
     return (
         <div className="w-full h-full bg-neutral-100 overflow-hidden">
@@ -15,7 +18,10 @@ export default async function DashLayout( { children }) {
                         pixelmothman/nextjs-b2b-app-starter
                         </Link>
                     </div>
-                    <div className="pr-4">
+                    <div className="w-fit h-fit flex flex-row gap-2 pr-4">
+                        {
+                            isOrgInDeleteQueue.length !== 0 ? (<DeleteOrgAlert userWhoTriggeredOrgDeleteEmail={isOrgInDeleteQueue.userWhoTriggeredOrgDeleteEmail}/>) : null
+                        }
                         <MainMenuDropDown/>
                     </div>
                 </div>

@@ -11,14 +11,11 @@ export default function MainMenuDropDown(){
 
     //get the org_id 
     let org = user?.user?.orgIdToOrgMemberInfo;
-
     let orgID = null;
-
     let userRole = null;
 
     if(org){
         orgID = Object.keys(org)[0];
-
         userRole = user.user.orgIdToOrgMemberInfo[orgID].userAssignedRole;
     }
 
